@@ -1,0 +1,11 @@
+#include <time.h>
+int main( int argc, char* argv[] )
+{
+   time_t curTime;
+   time( &curTime );
+   struct tm* curTmTime = gmtime( &curTime );
+   char buffer[200];
+   size_t len = strftime( buffer, 200, "%c", curTmTime );
+   printf( "Cur time:%s\n", buffer );
+   exit( 0 );
+} 
